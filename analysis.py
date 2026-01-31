@@ -1,4 +1,6 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+
 
 # Load student data
 df = pd.read_csv("students.csv")
@@ -23,3 +25,12 @@ df["Performance"] = df["Marks"].apply(categorize)
 
 print("\n📈 Updated Student Performance:")
 print(df)
+# Plot student marks
+plt.figure(figsize=(8,5))
+plt.bar(df["Name"], df["Marks"])
+plt.title("Student Marks Analysis")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.show()
+
+
